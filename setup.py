@@ -11,4 +11,5 @@ setup(
     download_url = 'https://github.com/GendoIkari/s3archive/tarball/v0.0.1',
     keywords = ['amazon', 's3', 'archive'],
     classifiers = [],
+    install_requires=['boto3'],
 )
