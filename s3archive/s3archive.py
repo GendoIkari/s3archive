@@ -30,3 +30,14 @@ class Archive:
     def exists(self, regex):
         """Returns False if there are no matches for the given regex."""
         return bool(next(self.find(regex), None))
+
+    def upload(self, source, destination):
+        """Uploads a file from the given source to the given destination on S3."""
+        self.upload_file(open(source, 'rb'), destination)
+
+    def upload_file(self, file_object, destination):
+        """Uploads a file to S3 with the given destination."""
+        self.bucket.put_object(
+            Key=destination,
+            Body=file_object,
+        )
