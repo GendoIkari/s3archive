@@ -1,6 +1,14 @@
 # s3archive
 An easy to use python3 package to archive files on Amazon S3
 
+## Installation
+
+```
+pip install s3archive
+```
+
+## Example
+
 ```python
 from s3archive.s3archive import Archive
 
