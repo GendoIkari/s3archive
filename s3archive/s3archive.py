@@ -24,7 +24,7 @@ class Archive:
             self.bucket = s3_resource.Bucket(bucket)
 
     def find(self, regex):
-        """Returns a generator of s3 objects that match the given regex."""
+        """Returns a generator of s3 objects that match the given regex in the form of (key, file_object)."""
         return ((f.key, f.get()['Body']) for f in self.bucket.objects.all() if re.match(regex, f.key))
 
     def exists(self, regex):
